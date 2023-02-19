@@ -9,6 +9,7 @@ const authString = `${clientId}:${clientSecret}`;
 const encodedAuthString = Buffer.from(authString).toString("base64");
 
 export const getAcessToken = async () => {
+  let token: string | undefined;
   await axios
     .post(
       "https://accounts.spotify.com/api/token",
@@ -23,18 +24,20 @@ export const getAcessToken = async () => {
     .then(async (response) => {
       const accessToken = response.data.access_token;
       await spotifyApi.setAccessToken(accessToken);
+      token = accessToken;
       //
     })
     .catch((error) => {
       console.log(error);
     });
+  return token;
 };
 
-spotifyApi
-  .getUserPlaylists("USER_ID")
-  .then((data) => {
-    console.log("User playlists", data);
-  })
-  .catch((err) => {
-    console.error(err);
-  });
+// spotifyApi
+//   .getUserPlaylists("USER_ID")
+//   .then((data) => {
+//     console.log("User playlists", data);
+//   })
+//   .catch((err) => {
+//     console.error(err);
+//   });

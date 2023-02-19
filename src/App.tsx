@@ -1,13 +1,20 @@
 import "./App.css";
 import { BrowserRouter, Route } from "react-router-dom";
 import MainHeader from "./headers/MainHeader";
-import React from "react";
-import { useSelector } from "react-redux";
-import { selectTokenId } from "./Redux/SpotifyRedux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { saveToken, selectTokenId } from "./Redux/SpotifyRedux";
+import { getAcessToken } from "./SpotifyApi";
 
 function App() {
+  const dispatch = useDispatch();
   const tokenId = useSelector(selectTokenId);
-  console.log(tokenId);
+  useEffect(() => {
+    getAcessToken().then((xd) => {
+      dispatch(saveToken(xd));
+    });
+  }, []);
+
   return (
     <BrowserRouter>
       <div className="App">

@@ -6,8 +6,8 @@ export const spotifySlice = createSlice({
     tokenId: "0",
   },
   reducers: {
-    saveToken: (state) => {
-      state.tokenId = "idk";
+    saveToken: (state, action) => {
+      state.tokenId = action.payload;
     },
   },
 });
