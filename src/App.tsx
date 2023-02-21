@@ -4,7 +4,7 @@ import MainHeader from "./headers/MainHeader";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { saveToken, selectTokenId } from "./Redux/SpotifyRedux";
-import { getAcessToken } from "./SpotifyApi";
+import { getAcessToken, getUserPlaylists } from "./SpotifyApi";
 
 function App() {
   const dispatch = useDispatch();
@@ -12,6 +12,7 @@ function App() {
   useEffect(() => {
     getAcessToken().then((xd) => {
       dispatch(saveToken(xd));
+      getUserPlaylists(tokenId);
     });
   }, []);
 

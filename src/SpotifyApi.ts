@@ -33,11 +33,13 @@ export const getAcessToken = async () => {
   return token;
 };
 
-// spotifyApi
-//   .getUserPlaylists("USER_ID")
-//   .then((data) => {
-//     console.log("User playlists", data);
-//   })
-//   .catch((err) => {
-//     console.error(err);
-//   });
+export const getUserPlaylists = async (token: string | undefined) => {
+  spotifyApi
+    .getUserPlaylists(token)
+    .then((data) => {
+      console.log("User playlists", data);
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+};
