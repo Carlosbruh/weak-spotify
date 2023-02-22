@@ -1,13 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export interface StateType {
+interface StateType {
   store: { tokenId?: string };
 }
 
 export const spotifySlice = createSlice({
   name: "spotifyredux",
   initialState: {
-    tokenId: "0",
+    tokenId: undefined,
   },
   reducers: {
     saveToken: (state, action) => {
