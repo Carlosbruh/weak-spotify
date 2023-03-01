@@ -35,7 +35,7 @@ export const getAcessToken = async () => {
 
 export const getUserPlaylists = async (token: string | undefined) => {
   spotifyApi
-    .getUserPlaylists(token)
+    .getUserPlaylists("USER_ID")
     .then((data) => {
       console.log("User playlists", data);
     })
