@@ -34,3 +34,11 @@ body,
   width: 200px;
   height: auto;
 }
+
+.container {
+  width: "100%";
+  display: "flex";
+  flex-wrap: "wrap";
+  overflow: "auto";
+  margin-top: "20px";
+}

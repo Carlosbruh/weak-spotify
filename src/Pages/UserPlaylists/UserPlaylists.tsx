@@ -20,7 +20,15 @@ function UserPlaylists() {
   };
   console.log(userPlaylists);
   return (
-    <div style={{ display: "flex", flexWrap: "wrap", overflow: "auto" }}>
+    <div
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        overflow: "auto",
+        marginTop: "100px",
+        justifyContent: "center",
+      }}
+    >
       {userPlaylists?.items.map((item, index) => (
         <div key={index}>
           <UserPlaylist image={item.images[0].url} />

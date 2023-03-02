@@ -12,7 +12,7 @@ function UserPlaylist(props: Playlist) {
   useEffect(() => {}, [tokenId]);
 
   return (
-    <div style={{ display: "flex", flexWrap: "wrap" }}>
+    <div style={{ marginLeft: "10px", marginRight: "10px" }}>
       <img className="image-size" src={props.image} alt="Example" />
     </div>
   );
