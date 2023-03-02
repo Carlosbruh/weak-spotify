@@ -13,7 +13,7 @@ function UserPlaylist(props: Playlist) {
 
   return (
     <div style={{ display: "flex", flexWrap: "wrap" }}>
-      <img src={props.image} alt="Example" />
+      <img className="image-size" src={props.image} alt="Example" />
     </div>
   );
 }
