@@ -33,13 +33,17 @@ export const getAcessToken = async () => {
   return token;
 };
 
-export const getUserPlaylists = async (token: string | undefined) => {
-  spotifyApi
-    .getUserPlaylists("USER_ID")
-    .then((data) => {
-      console.log("User playlists", data);
-    })
-    .catch((err) => {
-      console.error(err);
-    });
+export const getUserPlaylists = async () => {
+  return new Promise<SpotifyApi.ListOfUsersPlaylistsResponse>(
+    (resolve, reject) => {
+      spotifyApi
+        .getUserPlaylists("USER_ID")
+        .then((data) => {
+          resolve(data);
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    }
+  );
 };

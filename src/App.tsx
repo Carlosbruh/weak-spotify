@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { saveToken, selectTokenId } from "./Redux/SpotifyRedux";
 import { getAcessToken, getUserPlaylists } from "./SpotifyApi";
 import Home from "./Pages/Home";
-import UserPlaylists from "./Pages/UserPlaylists";
+import UserPlaylists from "./Pages/UserPlaylists/UserPlaylists";
 
 function App() {
   const dispatch = useDispatch();
@@ -21,13 +21,15 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <MainHeader></MainHeader>
-        <Routes>
-          <Route path="/" element={<Home></Home>}></Route>
-          <Route
-            path="/userplaylists"
-            element={<UserPlaylists></UserPlaylists>}
-          ></Route>
-        </Routes>
+        <div className="Main">
+          <Routes>
+            <Route path="/" element={<Home></Home>}></Route>
+            <Route
+              path="/userplaylists"
+              element={<UserPlaylists></UserPlaylists>}
+            ></Route>
+          </Routes>
+        </div>
       </div>
     </BrowserRouter>
   );
