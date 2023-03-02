@@ -7,6 +7,7 @@ import { saveToken, selectTokenId } from "./Redux/SpotifyRedux";
 import { getAcessToken, getUserPlaylists } from "./SpotifyApi";
 import Home from "./Pages/Home";
 import UserPlaylists from "./Pages/UserPlaylists/UserPlaylists";
+import PlaylistMenu from "./Pages/UserPlaylists/PlaylistMenu";
 
 function App() {
   const dispatch = useDispatch();
@@ -27,6 +28,10 @@ function App() {
             <Route
               path="/userplaylists"
               element={<UserPlaylists></UserPlaylists>}
+            ></Route>
+            <Route
+              path="/playlist"
+              element={<PlaylistMenu></PlaylistMenu>}
             ></Route>
           </Routes>
         </div>

@@ -31,7 +31,11 @@ function UserPlaylists() {
     >
       {userPlaylists?.items.map((item, index) => (
         <div key={index}>
-          <UserPlaylist image={item.images[0].url} title={item.name} />
+          <UserPlaylist
+            item={item}
+            image={item.images[0].url}
+            title={item.name}
+          />
         </div>
       ))}
     </div>
